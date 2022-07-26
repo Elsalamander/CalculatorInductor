@@ -1,11 +1,16 @@
 package it.elsalamander.calculatorinductor
 
 import android.content.Context
+import android.util.Log
 import androidx.fragment.app.Fragment
 import it.elsalamander.calculatorinductor.layout.FragmentIndutance
 import it.elsalamander.loaderclass.AbstractLoadClass
+import it.elsalamander.loaderclass.Holder
+import it.elsalamander.loaderclass.OnStartUpExtension
+import it.elsalamander.loaderclass.calculator.Operation
+import it.elsalamander.loaderclass.calculator.execute.operator.Operator
 
-class Inductor : AbstractLoadClass(MyOperation()) {
+class Inductor : AbstractLoadClass(MyOperation()), OnStartUpExtension {
 
     override fun getTitle(): String {
         return "Calculator Inductor"
@@ -17,5 +22,16 @@ class Inductor : AbstractLoadClass(MyOperation()) {
 
     override fun getFragment(context: Context): Fragment {
         return FragmentIndutance(context)
+    }
+
+    override fun doOnStartUp(param: Holder, newLoad: Boolean) {
+        class myOperator() : Operator("%", 3, 2){
+            override fun execute(sx: Double?, dx: Double?): Double {
+                Log.d("Operazione %", "$sx % $dx")
+                return sx!! % dx!!
+            }
+        }
+
+        myOperator()
     }
 }
