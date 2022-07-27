@@ -7,7 +7,6 @@ import it.elsalamander.calculatorinductor.layout.FragmentIndutance
 import it.elsalamander.loaderclass.AbstractLoadClass
 import it.elsalamander.loaderclass.Holder
 import it.elsalamander.loaderclass.OnStartUpExtension
-import it.elsalamander.loaderclass.calculator.Operation
 import it.elsalamander.loaderclass.calculator.execute.operator.Operator
 
 class Inductor : AbstractLoadClass(MyOperation()), OnStartUpExtension {
@@ -25,13 +24,13 @@ class Inductor : AbstractLoadClass(MyOperation()), OnStartUpExtension {
     }
 
     override fun doOnStartUp(param: Holder, newLoad: Boolean) {
-        class myOperator() : Operator("%", 3, 2){
+        class MyOperator : Operator("%", 3, 2){
             override fun execute(sx: Double?, dx: Double?): Double {
                 Log.d("Operazione %", "$sx % $dx")
                 return sx!! % dx!!
             }
         }
 
-        myOperator()
+        MyOperator()
     }
 }

@@ -97,7 +97,7 @@ class InductorCalculatorListener (val myOperation: MyOperation, val myLayout : M
 
             return true
         }
-        return false;
+        return false
     }
 
 }

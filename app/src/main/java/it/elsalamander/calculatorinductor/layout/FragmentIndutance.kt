@@ -10,8 +10,11 @@ import androidx.fragment.app.Fragment
 class FragmentIndutance(val cont: Context) : Fragment() {
     val layout = MyFactoryView()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = layout.createLayout(cont)
-        return view
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return layout.createLayout(cont)
     }
 }

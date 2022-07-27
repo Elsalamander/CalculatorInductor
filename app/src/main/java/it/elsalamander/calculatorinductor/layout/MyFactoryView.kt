@@ -86,7 +86,7 @@ class MyFactoryView {
     /**
      * Crea il layout per la parte della calcolatrice
      */
-    private fun getCalculatorLayout(context: Context): View? {
+    private fun getCalculatorLayout(context: Context): View {
         val calcLayout = LinearLayout(context)
         calcLayout.orientation = LinearLayout.VERTICAL
         //parametri
@@ -148,7 +148,7 @@ class MyFactoryView {
     /**
      * Crea il loyout per la parte dei colori
      */
-    private fun getColorCodeLayout(context: Context): View? {
+    private fun getColorCodeLayout(context: Context): View {
         val layout = LinearLayout(context)
         layout.orientation = LinearLayout.VERTICAL
 
