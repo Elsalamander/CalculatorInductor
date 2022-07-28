@@ -6,7 +6,7 @@ import android.widget.EditText
 import it.elsalamander.calculatorinductor.MyOperation
 import it.elsalamander.calculatorinductor.layout.MyFactoryView
 
-class InductorCalculatorListener (val myOperation: MyOperation, val myLayout : MyFactoryView) : View.OnKeyListener{
+class InductorCalculatorListener(val myOperation: MyOperation, val myLayout : MyFactoryView) : View.OnKeyListener{
 
     /**
      * Called when a hardware key is dispatched to a view. This allows listeners to

@@ -30,7 +30,15 @@ class Inductor : AbstractLoadClass(MyOperation()), OnStartUpExtension {
                 return sx!! % dx!!
             }
         }
-
         MyOperator()
+
+        class MyOperatorEuler : Operator("e", Int.MAX_VALUE, 0){
+            override fun execute(sx: Double?, dx: Double?): Double {
+                Log.d("Operazione e", "2.71")
+                return 2.71
+            }
+        }
+
+        MyOperatorEuler()
     }
 }
